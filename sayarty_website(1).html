@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="سيارتي لقطع غيار السيارات - اطلب قطع غيار سيارتك بسهولة عبر واتساب">
+  <title>سيارتي | قطع غيار السيارات</title>
+  <style>
+    :root{--navy:#101b2b;--blue:#1769aa;--orange:#f28c28;--ink:#172235;--muted:#667085;--bg:#f4f7fb;--white:#fff}
+    *{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{text-decoration:none;color:inherit}.top{background:var(--navy);color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .brand{font-size:25px;font-weight:900;letter-spacing:.3px}.brand span{color:var(--orange)}.top small{color:#d6dfeb}
+    .hero{padding:58px 5%;background:linear-gradient(115deg,rgba(10,23,40,.96),rgba(23,105,170,.88)),radial-gradient(circle at 15% 30%,#6688a8,#102039);color:#fff}
+    .hero-inner{max-width:1100px;margin:auto}.eyebrow{color:#ffd09b;font-weight:bold}.hero h1{font-size:clamp(30px,5vw,48px);margin:12px 0}.hero p{font-size:17px;line-height:1.9;color:#e4edf7;max-width:650px}
+    .btn{display:inline-block;background:var(--orange);color:#1d2633;padding:13px 22px;border-radius:10px;font-weight:bold;margin-top:12px}
+    .wrap{max-width:1100px;margin:34px auto;padding:0 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    h2{margin:0 0 7px;font-size:25px}.muted{color:var(--muted);font-size:14px}
+    .tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.tools input,.tools select{padding:12px;border:1px solid #d8e0ea;border-radius:9px;background:white;font:inherit;min-width:170px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{background:white;border:1px solid #e4eaf1;border-radius:15px;overflow:hidden;box-shadow:0 5px 18px rgba(20,40,70,.05)}
+    .photo{height:145px;background:linear-gradient(135deg,#e7eef6,#cbd8e7);display:grid;place-items:center;font-size:58px}
+    .card-body{padding:16px}.tag{font-size:12px;color:var(--blue);font-weight:bold}.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px;min-height:38px;line-height:1.6}
+    .order{display:block;text-align:center;background:#168b55;color:white;padding:11px;border-radius:9px;font-weight:bold;margin-top:12px}
+    .about{background:white;border-radius:15px;padding:22px;line-height:1.9;border:1px solid #e4eaf1}
+    footer{background:var(--navy);color:#e7edf5;padding:26px 5%;text-align:center;margin-top:40px}
+    .wa-float{position:fixed;bottom:18px;left:18px;background:#19a463;color:white;padding:13px 17px;border-radius:30px;box-shadow:0 5px 18px #0003;font-weight:bold}
+    @media(max-width:600px){.hero{padding:42px 6%}.top{padding:13px 5%}.tools input,.tools select{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">سيار<span>تي</span> 🚘</a>
+    <small>قطع غيار سيارات • طلب سهل عبر واتساب</small>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">أهلاً بك في سيارتي</div>
+      <h1>كل اللي عربيتك محتاجاه في مكان واحد</h1>
+      <p>دور على قطعة الغيار المناسبة، وابعت طلبك مباشرة على واتساب. اسألنا عن التوافر والسعر قبل تأكيد الطلب.</p>
+      <a class="btn" href="https://wa.me/201152656178?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%A3%D9%84%20%D8%B9%D9%86%20%D9%82%D8%B7%D8%B9%D8%A9%20%D8%BA%D9%8A%D8%A7%D8%B1">اطلب على واتساب</a>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="section-head">
+      <div><h2>قطع الغيار</h2><div class="muted">اختار القسم أو ابحث عن القطعة اللي محتاجها</div></div>
+    </div>
+    <div class="tools">
+      <input id="search" type="search" placeholder="ابحث عن قطعة غيار...">
+      <select id="category">
+        <option value="all">كل الأقسام</option>
+        <option value="محرك">المحرك</option>
+        <option value="كهرباء">كهرباء</option>
+        <option value="فلاتر">فلاتر</option>
+        <option value="فرامل">فرامل</option>
+      </select>
+    </div>
+    <div class="grid" id="products"></div>
+
+    <section style="margin-top:32px">
+      <div class="about">
+        <h2>عن سيارتي</h2>
+        <p>سيارتي وجهتك لطلب قطع غيار السيارات. ابعت لنا نوع العربية والموديل واسم القطعة، وهنساعدك تستفسر عن القطعة المناسبة والسعر والتوافر.</p>
+        <strong>للطلب والاستفسار:</strong> <a href="https://wa.me/201152656178" style="color:#168b55;font-weight:bold">01152656178 واتساب</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> سيارتي - جميع الحقوق محفوظة</footer>
+  <a class="wa-float" href="https://wa.me/201152656178?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%82%D8%B7%D8%B9%D8%A9%20%D8%BA%D9%8A%D8%A7%D8%B1">واتساب 💬</a>
+
+  <script>
+    // لتعديل المنتجات: غيّر الاسم والوصف والقسم والرمز داخل القائمة دي.
+    const products = [
+      {name:"بوجيهات سيارات",category:"كهرباء",desc:"بوجيهات لموديلات مختلفة — اسأل عن المتاح.",icon:"🔩"},
+      {name:"فلتر زيت",category:"فلاتر",desc:"فلاتر زيت لسيارات متعددة حسب الموديل.",icon:"🛢️"},
+      {name:"تيل فرامل",category:"فرامل",desc:"تيل فرامل أمامي وخلفي حسب نوع السيارة.",icon:"⚙️"},
+      {name:"فلتر هواء",category:"فلاتر",desc:"فلتر هواء للمحرك — ابعت موديل عربيتك.",icon:"🌬️"},
+      {name:"سير مجموعة",category:"محرك",desc:"سيور للمحرك بمقاسات وموديلات مختلفة.",icon:"🔧"},
+      {name:"لمبات سيارات",category:"كهرباء",desc:"لمبات وإضاءة للسيارات حسب النوع.",icon:"💡"}
+    ];
+    const box=document.getElementById("products"), search=document.getElementById("search"), category=document.getElementById("category");
+    function render(){
+      const q=search.value.trim().toLowerCase(), c=category.value;
+      const shown=products.filter(p=>(c==="all"||p.category===c)&&(p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));
+      box.innerHTML=shown.length?shown.map(p=>`<article class="card"><div class="photo">${p.icon}</div><div class="card-body"><span class="tag">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p><a class="order" target="_blank" href="https://wa.me/201152656178?text=${encodeURIComponent("مرحباً، عايز أسأل عن: "+p.name+"، من فضلكم السعر والتوافر؟")}">اسأل عن السعر واطلب</a></div></article>`).join(""):'<p class="muted">مفيش نتائج. جرّب كلمة بحث تانية.</p>';
+    }
+    search.addEventListener("input",render);category.addEventListener("change",render);document.getElementById("year").textContent=new Date().getFullYear();render();
+  </script>
+</body>
+</html>
